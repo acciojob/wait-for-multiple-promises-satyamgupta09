@@ -6,13 +6,13 @@ let prom1 = new Promise((resolve, reject)=>{
 
 let prom2=new Promise((resolve, reject)=>{
 	setTimeout(()=>{
-		return resolve({name:'Promise2', time:2000});
+		return resolve({name:'Promise2', time:500});
 	},2000);
 });
 
 let prom3=new Promise((resolve, reject)=>{
 	setTimeout(()=>{
-		return resolve({name:'Promise3', time:3000});
+		return resolve({name:'Promise3', time:700});
 	},3000);
 });
 
@@ -21,6 +21,7 @@ document.getElementById('output').innerHTML += `
                 <td colspan=2>Loading...</td>
             </tr>
           `;
+
 Promise.all([prom1, prom2, prom3]).then((res)=>{
 	document.getElementById('output').innerHTML=``;
 	res.forEach((data)=>{
