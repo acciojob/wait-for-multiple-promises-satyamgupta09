@@ -16,7 +16,7 @@ let prom3 = new Promise((resolve)=>{
 	},2000);
 })
 
-document.getElementById("output").innerHTML='Loading...';
+document.getElementById("output").innerHTML='<tr id="loading"><td colspane="2">Loading...</td></tr>';
 
 
 Promise.all([prom1, prom2, prom3]).then((res)=>{
@@ -27,7 +27,7 @@ Promise.all([prom1, prom2, prom3]).then((res)=>{
 		document.getElementById("output").innerHTML+=`
 		<tr>
 		 <td>Promise ${item.data}</td>
-		 <td>${item.time}</td>
+		 <td>${item.time/1000}</td>
 		</tr>
 		`
 	});
@@ -38,7 +38,7 @@ Promise.all([prom1, prom2, prom3]).then((res)=>{
 	document.getElementById("output").innerHTML+=`
 		<tr>
 		 <td>Total</td>
-		 <td>${total}</td>
+		 <td>${total.toFixed(3)/1000}</td>
 		</tr>
 		`
 })
