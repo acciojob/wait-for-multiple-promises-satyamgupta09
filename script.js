@@ -43,10 +43,12 @@ Promise.all([prom1(), prom2(), prom3()]).then((res)=>{
 		`
 		<tr>
 		<td>Total</td>
-		<td>${total/1000}</td>
+		<td>${(total/1000).toFixed(3)}</td>
 		</tr>
 		`
 })
+
+
 
 
 
